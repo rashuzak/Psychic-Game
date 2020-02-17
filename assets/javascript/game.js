@@ -1,17 +1,17 @@
+//Sets the variables for the GAME
+
 var alphChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         
 var wins = 0;
 var losses = 0;
 var guessLeft = 10;
 var guessedLetters =[];
-var i = 0;
 
 
-
-
+//Resets the variables 
 
 function reset(){
-    //reset function
+   
     wins = 0;
     losses = 0;
     guessesLeft = 0;
@@ -20,25 +20,21 @@ function reset(){
    
 }
 
-
+//Gets the computer selected letter
 
 var computerChoice = getRandomLetter();
-console.log("computerlt " + computerChoice);
 
-
-// computer selects a letter
 function getRandomLetter(){
    
     var random = alphChoices[Math.floor(Math.random() * alphChoices.length)];
     return random
-    
-    
+        
 }
 
-
+//Gets the users guess
 
 function checkUserGuess(){
-    //get the users guess
+    
    var userPicked = document.getElementById("user-guess").value;
    
   // Checks if users guess is a letter or not  
@@ -53,20 +49,14 @@ if (userPicked == parseInt(userPicked, 10)){
 
    guessedLetters.push(guessed);
 
-   console.log("guessed " + guessed);
+   //Sends the guessed letter to the array
 
-
-
-        document.getElementById("guessedLetters").innerText = guessedLetters.join(",")
-
-    
-             
-    
-   
+   document.getElementById("guessedLetters").innerText = guessedLetters.join(",")
    
    }
   
-    //compare it with the computer's choice
+   //Compares the user's guess with the computer's choice
+
     if (guessed === computerChoice){
     
         wins++;
@@ -74,34 +64,20 @@ if (userPicked == parseInt(userPicked, 10)){
                 document.getElementById("wins").innerText = wins;
              // continuePlaying call the function getRandomLetter
               //getRandomLetter();
-              
-
-             
-
     }
     
       else{
         losses++;
         
         document.getElementById("losses").innerText =  losses + "   " + " Try again!";
-       // guessedLetters.push(guessed);
-        
         
       }
-       //To show the letters used
-       //for (var j = i; j < alphChoices.length; j++) {
 
-       // document.getElementById("guessedLetters").innerText = guessedLetters[j];
-
-       // break;  
-        //   }    
-    
-        //i = ++j;
-        
-       //  set guesses left 
+      //Sets the guesses left
+       
        guessLeft = guessLeft - 1;
 
-        document.getElementById("guessesLeft").innerText = guessLeft;
+       document.getElementById("guessesLeft").innerText = guessLeft;
        
 
-    }
+   }
