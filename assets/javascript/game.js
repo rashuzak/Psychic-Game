@@ -5,7 +5,7 @@ var losses = 0;
 var guessLeft = 10;
 var guessedLetters =[];
 var i = 0;
-var K = 0;
+
 
 
 
@@ -53,16 +53,15 @@ if (userPicked == parseInt(userPicked, 10)){
 
    guessedLetters.push(guessed);
 
+   console.log("guessed " + guessed);
 
-   //To show the letters used
-       for (var j = i; j < alphChoices.length; j++) {
 
-        document.getElementById("guessedLetters").innerText = guessedLetters[j];
 
-        break;  
-           }    
+        document.getElementById("guessedLetters").innerText = guessedLetters.join(",")
+
     
-        i = ++j;
+             
+    
    
    
    }
