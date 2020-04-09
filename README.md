@@ -10,4 +10,7 @@ Choose a letter from A – Z.  The computer will test your psychic ability. See 
 
 You can only choose a letter of English alphabet. If you choose a capital letter the code will convert it to small letter. If you enter a number an alert will be projected on the web browser.
 
+
+link : https://rashuzak.github.io/Psychic-Game/
+
  
